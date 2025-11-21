@@ -21,7 +21,39 @@ Built with Raspberry Pi 4, RTL-SDR Blog V4, Python, and Linux
 * Real time aircraft tracking
 
 **System Architecture**
-insert 
+```bash
+linux-sdr-adsb-receiver/
+│
+├── README.md
+├── docs/
+│   ├── week1_setup.md
+│   ├── week2_decoder.md
+│   ├── week3_integration.md
+│   ├── week4_results.md
+│   └── block_diagram.png
+│
+├── hardware/
+│   ├── bill_of_materials.md
+│   ├── antenna_setup.jpg
+│   └── wiring_diagram.png
+│
+├── python/
+│   ├── samples/
+│   │   └── out.bin
+│   ├── test_sdr.py
+│   ├── decoder.py
+│   ├── preamble_detection.py
+│   ├── bit_extraction.py
+│   └── message_parser.py
+│
+├── data/
+│   ├── aircraft_log.csv
+│   ├── raw_iq/
+│   │   └── sample1.bin
+│   └── plots/
+├── End
+
+```
 
 **Features**
 * Real time ADS-b signal reception
