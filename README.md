@@ -77,5 +77,5 @@ Screenshots of:
 
 **Background / Theory**
 
-**Author**
+**Author**:
 Ranen Carreon 
