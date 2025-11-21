@@ -21,6 +21,17 @@ Built with Raspberry Pi 4, RTL-SDR Blog V4, Python, and Linux
 * Real time aircraft tracking
 
 **System Architecture**
+
+
+**Features**
+* Real time ADS-b signal reception
+* Python-based custom decoder
+* PPM demodulation + CRC validation
+* Raw IQ logging
+* Aircraft visualization on map
+* Runs on Raspberry Pi 4 (low power embedded Linux)
+
+**Repository Structure**
 ```bash
 linux-sdr-adsb-receiver/
 │
@@ -54,17 +65,6 @@ linux-sdr-adsb-receiver/
 ├── End
 
 ```
-
-**Features**
-* Real time ADS-b signal reception
-* Python-based custom decoder
-* PPM demodulation + CRC validation
-* Raw IQ logging
-* Aircraft visualization on map
-* Runs on Raspberry Pi 4 (low power embedded Linux)
-
-**Repository Structure**
-
 
 **Demo Images**
 Screenshots of:
