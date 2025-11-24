@@ -1,0 +1,24 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Raw SDR data
+*.bin
+*.iq
+*.dat
+
+# Large captures
+captures/*
+data/*
+!captures/.gitkeep
+!data/.gitkeep
+
+# Logs
+*.log
