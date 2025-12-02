@@ -44,7 +44,6 @@ linux-sdr-adsb-receiver/
 │   └── block_diagram.png
 │
 ├── hardware/
-│   ├── bill_of_materials.md
 │   ├── antenna_setup.jpg
 │   └── wiring_diagram.png
 │
