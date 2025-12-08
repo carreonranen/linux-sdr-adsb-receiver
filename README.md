@@ -1,27 +1,43 @@
-**Linux Based SDR Wireless Communications System (ADS-B Receiver)**
+Linux-Based SDR Wireless Communications System (ADS-B Receiver)
 
 Built with Raspberry Pi 4, RTL-SDR Blog V4, Python, and Linux
 
+This project is a complete wireless communications system that receives, demodulates, and decodes real-world aircraft ADS-B signals at 1090 MHz.
+It demonstrates RF engineering fundamentals, Linux systems work, SDR signal processing, protocol decoding, and end-to-end hardware/software integration.
+
 **Skills Demonstrated**
-* Linux
-* Python
-* Signal processing
-* SDR
-* Hardware integration
-* Embedded systems
-* Data engineering
-* RF engineering fundamentals
-
-**A complete wireless communications project demonstrating:**
-* Software Defined Radio
 * Linux system configuration
-* Signal processing
-* Modulation decoding (PPM)
-* Hardware–software integration
-* Real time aircraft tracking
+* Python scripting + tooling
+* Software Defined Radio (RTL-SDR Blog V4)
+* Signal processing (I/Q data, FFT, magnitude analysis)
+* Pulse-Position Modulation (PPM) decoding
+* Bit-level protocol parsing (Mode S / ADS-B)
+* Hardware integration (filters, antennas, Raspberry Pi)
+* Data engineering + CSV logging
+* Visualization + system analysis
 
-**System Architecture**
+**Project Overview**
+Uses a RAS PI 4 and RTL-SDR Blog V4, the system will:
+1) Capture raw IQ samples at 2ms 
+2) Detects ADS-B preambles
+3) Demodulates PPM bits from Preamble
+4) Decodes DF(Downlink Format), CA(Transponder Capability), ICAO(International Civilization Avitation Organization), Type Code, and the CRC(Cyclic Redundancy Check)
+5) Extracts aircraft identification messages (the callsigns)
+6) Logs all decoded frames into CSV
+7) Use Matplotlib to Visualize message categories
 
+**System Features**
+* [x] Real-time IQ capture
+* [x] PPM demodulation from I/Q Samples
+* [ ] Automatic Preamble Detection
+* [ ] Bit slicing + 112-bit ADS-B frame extraction
+* [ ] Decoding of:
+      -[x]DF (Downlink Format)
+      -[x]CA (Capability)
+      -[x]ICAO aircraft address
+      -[x]Type code & Category
+      -[x]Aircraft callsign
+      -[]Aircraft Elevation Information (Work in progress)
 
 **Features**
 * Real time ADS-b signal reception
@@ -36,41 +52,51 @@ Built with Raspberry Pi 4, RTL-SDR Blog V4, Python, and Linux
 linux-sdr-adsb-receiver/
 │
 ├── README.md
-├── docs/
-│   ├── week1_setup.md
-│   ├── week2_decoder.md
-│   ├── week3_integration.md
-│   ├── week4_results.md
-│   └── block_diagram.png
 │
-├── hardware/
-│   ├── antenna_setup.jpg
-│   └── wiring_diagram.png
+├── docs/
+│   ├── week1_theory.md
+│   ├── week2_demodulation.md
+│   ├── week3_decoding.md
+│   ├── week4_results.md
+│   ├── frames_log.csv
+│   └── images/
+│       ├── magnitude_plot.png
+│       └── type_code_histogram.png
+│
+├── captures/
+│   └── adsb_200k.iq
 │
 ├── python/
-│   ├── samples/
-│   │   └── out.bin
-│   ├── test_sdr.py
-│   ├── decoder.py
+│   ├── capture_samples.py
+│   ├── decode_all_frames.py
+│   ├── decode_identification.py
+│   ├── payload_decoder.py
 │   ├── preamble_detection.py
-│   ├── bit_extraction.py
-│   └── message_parser.py
+│   ├── samples_to_bits.py
+│   ├── test_identification.py
+│   ├── visualize_type_codes.py
+│   └── log_frames.py
 │
-├── data/
-│   ├── aircraft_log.csv
-│   ├── raw_iq/
-│   │   └── sample1.bin
-│   └── plots/
-├── End
+└── hardware/
+    ├── antenna_setup.jpg
+    └── filter_and_sdr.jpg
 
-```
 
 **Demo Images**
-Screenshots of:
-* dump1090
-* your antenna setup
-* your Python decoder output
-* map visualization
+Magnitude plot of raw IQ data
+<img width="1200" height="400" alt="adsb_magnitude_plot" src="https://github.com/user-attachments/assets/b69f0023-4258-4e67-a8ba-d5141ffeb913" />
+
+Detected preambles
+<img width="1614" height="310" alt="2025-12-08_13-56" src="https://github.com/user-attachments/assets/3669ce77-b6be-45db-b63c-c01a074a4a35" />
+
+Terminal output of decoded ADS-B frames
+<img width="1612" height="532" alt="2025-12-08_13-57" src="https://github.com/user-attachments/assets/c300bb94-b1b8-4514-9394-01a595efba41" />
+
+Histogram of ADS-B message categories
+*UNKOWN is work in progress and is most likely altitude*
+<img width="960" height="720" alt="type_code_histogram" src="https://github.com/user-attachments/assets/12375c2c-2449-4fdc-ab47-b57acf34f3a2" />
+
+Hardware (antenna, filter, RTL-SDR, Raspberry Pi)
 
 **How to Run**
 
