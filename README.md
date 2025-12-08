@@ -31,13 +31,12 @@ Uses a RAS PI 4 and RTL-SDR Blog V4, the system will:
 * [x] PPM demodulation from I/Q Samples
 * [x] Automatic Preamble Detection
 * [x] Bit slicing + 112-bit ADS-B frame extraction
-* [ ] Decoding of:
-      * [x]DF (Downlink Format)
-      * [x]CA (Capability)
-      * [x]ICAO aircraft address
-      * [x]Type code & Category
-      * [x]Aircraft callsign
-      * []Aircraft Elevation Information (Work in progress)
+Decoding of:
+* [x]CA (Capability)
+* [x]ICAO aircraft address
+* [x]Type code & Category
+* [x]Aircraft callsign
+* []Aircraft Elevation Information (Work in progress)
 
 **Features**
 * Real time ADS-b signal reception
