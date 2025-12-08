@@ -95,7 +95,8 @@ Terminal output of decoded ADS-B frames
 <img width="1612" height="532" alt="2025-12-08_13-57" src="https://github.com/user-attachments/assets/c300bb94-b1b8-4514-9394-01a595efba41" />
 
 Histogram of ADS-B message categories
-<img width="960" height="720" alt="type_code_histogram" src="https://github.com/user-attachments/assets/f54e23bc-637d-4d7b-828b-2b6832a428d7" />
+<img width="1500" height="750" alt="type_code_histogram(1)" src="https://github.com/user-attachments/assets/b3f329e5-d79a-4738-9435-c25a32dc464d" />
+
 **UNKOWN is work in progress and is most likely altitude**
 
 
