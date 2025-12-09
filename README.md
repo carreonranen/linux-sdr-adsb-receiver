@@ -1,4 +1,4 @@
-Linux-Based SDR Wireless Communications System (ADS-B Receiver)
+**Linux-Based SDR Wireless Communications System (ADS-B Receiver)**
 
 Built with Raspberry Pi 4, RTL-SDR Blog V4, Python, and Linux
 
