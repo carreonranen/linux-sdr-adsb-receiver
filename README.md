@@ -29,7 +29,7 @@ Uses a RAS PI 4 and RTL-SDR Blog V4, the system will:
 **System Features**
 * [x] Real-time IQ capture
 * [x] PPM demodulation from I/Q Samples
-* [x] Automatic Preamble Detection
+* [x] Preamble Detection
 * [x] Bit slicing + 112-bit ADS-B frame extraction
 
 *Decoding of:*
