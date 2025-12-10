@@ -48,11 +48,9 @@ Uses a RAS PI 4 and RTL-SDR Blog V4, the system will:
 * Runs on Raspberry Pi 4 (low power embedded Linux)
 
 **Repository Structure**
-```bash
+```text
 linux-sdr-adsb-receiver/
-│
 ├── README.md
-│
 ├── docs/
 │   ├── week1_theory.md
 │   ├── week2_demodulation.md
@@ -62,28 +60,24 @@ linux-sdr-adsb-receiver/
 │   └── images/
 │       ├── magnitude_plot.png
 │       └── type_code_histogram.png
-│
 ├── captures/
 │   └── adsb_200k.iq
-│
 ├── python/
 │   ├── capture_samples.py
 │   ├── decode_all_frames.py
 │   ├── decode_identification.py
 │   ├── payload_decoder.py
 │   ├── preamble_detection.py
-│   ├── samples_to_bits.py
-│   ├── test_identification.py
-│   ├── visualize_type_codes.py
-│   └── log_frames.py
-│
+│   ├── bit_extraction.py
+│   ├── frame_parser.py
+│   ├── log_frames.py
+│   ├── visualize_samples.py
+│   └── visualization_type_codes.py
 └── hardware/
     ├── antenna_setup.jpg
     └── filter_and_sdr.jpg
 
 ```
-
-
 **Demo Images**
 Magnitude plot of raw IQ data
 <img width="1200" height="400" alt="adsb_magnitude_plot" src="https://github.com/user-attachments/assets/b69f0023-4258-4e67-a8ba-d5141ffeb913" />
