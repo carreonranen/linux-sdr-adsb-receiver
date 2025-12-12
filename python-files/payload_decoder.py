@@ -4,7 +4,9 @@ def get_type_code(rawM: int) -> int:
     # top 5 bits of the 56 bit ME field
     return (rawM >> 51) & 0b11111
 
+    # Classify type code into message categories
 
+#   Helper function to classify type code into message categories
 def classify_type_code(tc: int) -> str:
     if 1 <= tc <= 4:
         return "Aircraft Identification"
@@ -21,7 +23,7 @@ def classify_type_code(tc: int) -> str:
     else:
         return "Unknown"
 
-
+# Function to summarize payload information from rawM
 def summarize_payload(rawM: int) -> dict:
     tc = get_type_code(rawM)
     return {

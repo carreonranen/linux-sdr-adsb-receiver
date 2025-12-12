@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 CSV_PATH = "../docs/frames_log.csv"
 
-
+# Load frame categories from CSV file
 def load_categories(csv_path: str):
     cats = []
     with open(csv_path, newline="") as f:
@@ -15,23 +15,23 @@ def load_categories(csv_path: str):
                 cats.append(cat)
     return cats
 
-
+# Plot histogram of frame type codes
 def plot_histogram() -> None:
     cats = load_categories(CSV_PATH)
     print(f"Loaded {len(cats)} frame categories.")
-
+    # Count occurrences of each category
     counts = Counter(cats)
-
+    
     print("Category counts:")
     for cat, cnt in counts.items():
         print(f"  {cat}: {cnt}")
 
     labels = list(counts.keys())
     values = [counts[l] for l in labels]
-
+    # Create bar chart
     plt.figure(figsize=(9, 4))
     bars = plt.bar(labels, values)
-
+    #
     plt.title("ADS B Message Type Distribution")
     plt.xlabel("Message Category")
     plt.ylabel("Count")

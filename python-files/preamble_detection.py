@@ -2,13 +2,13 @@ import numpy as np
 from typing import List
 from constants import sample_rate, bit_period, preamble, data_bits
 
-
+# preamble_detection.py
 def findPreambleIndices(samples: np.ndarray, sample_rate: int) -> List[int]:
     """
     Very simple ADS B preamble detector.
     Returns a list of sample indices where a preamble might start.
     """
-
+    # Calculate magnitude of samples
     mag = np.abs(samples)
 
     # rough noise level and threshold
@@ -29,7 +29,7 @@ def findPreambleIndices(samples: np.ndarray, sample_rate: int) -> List[int]:
     # keep peaks that are far enough apart
     preamble_idx: List[int] = []
     last = -min_gap
-
+    # filter peaks to ensure minimum gap between detections
     for idx in peak_idx:
         if idx - last >= min_gap:
             preamble_idx.append(idx)

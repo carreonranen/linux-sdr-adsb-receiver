@@ -7,7 +7,7 @@ from decode_all_frames import decode_all_frames
 from payload_decoder import summarize_payload
 from decode_identification import decode_callsign
 
-
+# Helper function to conditionally decode callsign
 def maybe_decode_callsign(df: int, category: str, rawM: int) -> Optional[str]:
     # only decode callsign for DF 17 and identification messages
     if df != 17:
@@ -16,7 +16,7 @@ def maybe_decode_callsign(df: int, category: str, rawM: int) -> Optional[str]:
         return None
     return decode_callsign(rawM)
 
-
+# Main function to decode frames and log them to a CSV file
 def main():
     frames = decode_all_frames()
     print(f"Total decoded frames: {len(frames)}")
@@ -40,7 +40,7 @@ def main():
                 "callsign",
             ]
         )
-
+        # Write each decoded frame's details to the CSV
         for idx, frame in enumerate(frames):
             df = frame["df"]
             ca = frame["ca"]
@@ -69,7 +69,7 @@ def main():
                     callsign or "",
                 ]
             )
-
+    
     print(f"Wrote frame log to {csv_path}")
 
 

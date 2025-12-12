@@ -5,6 +5,12 @@ from rtlsdr import RtlSdr
 from constants import centr_freq, sample_rate, gain
 
 
+
+#Configures RTL SDR hardware and captures raw RF samples centered at
+#the ADS-B frequency (1090 MHz). Saves the samples to a .npy file for later processing.
+#Antenna -> RF front end -> ADC -> complex IQ samples -> save to disk
+#In short, I'm gathering raw data to be saved and then decoded later
+
 def main():
     sdr = RtlSdr()
 

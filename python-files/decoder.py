@@ -8,7 +8,7 @@ from preamble_detection import findPreambleIndices
 from bit_extraction import samples_to_bits
 from frame_parser import parseFrame
 
-
+# Sets up the SDR with specified parameters
 def create_sdr():
     sdr = RtlSdr()
     sdr.sample_rate = sample_rate
@@ -16,7 +16,7 @@ def create_sdr():
     sdr.gain = gain
     return sdr
 
-
+# Processes a block of samples to find and decode ADS-B frames
 def process_block(samples: np.ndarray):
     indices = findPreambleIndices(samples, sample_rate)
     for idx in indices:
@@ -25,7 +25,7 @@ def process_block(samples: np.ndarray):
             frame = parseFrame(bits)
             print("Decoded frame:", frame)
 
-
+# Main function to run the decoder
 def main():
     sdr = create_sdr()
     try:
