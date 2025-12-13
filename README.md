@@ -6,6 +6,26 @@ Built with Raspberry Pi 4, RTL-SDR Blog V4, Python, and Linux
 
 This project is a complete wireless communications system that receives, demodulates, and decodes real-world aircraft ADS-B signals at 1090 MHz.
 It demonstrates RF engineering fundamentals, Linux systems work, SDR signal processing, protocol decoding, and end-to-end hardware/software integration.
+**TECH 165 Theoretical**
+*Carrier Frequency and Bandwidth*
+
+In TECH 165, wireless systems are described in terms of carrier frequency and bandwidth allocation. ADS-B operates on a standardized carrier frequency of 1090 MHz, which is internationally reserved for aircraft surveillance broadcasts.By tuning the RTL-SDR to 1090 MHz, this project demonstrates how a receiver isolates a specific communication channel in the RF spectrum. The selected 2 MS/s sample rate determines the effective bandwidth captured around the carrier, directly reflecting the sampling and bandwidth tradeoffs discussed in class.
+
+*Noise, Interference, and Filtering*
+
+Wireless theory emphasizes that receivers do not capture isolated signals but instead receive a combination of desired signals, noise, and interference.
+
+In this project, a 1090 MHz band-pass filter is used to attenuate out-of-band energy before digitization. However, in-band noise still remains, which must be handled in software.
+
+This reinforces key TECH 165 ideas:
+
+• Noise is unavoidable in wireless systems
+• Hardware filtering reduces but does not eliminate interference
+• Software processing is required to further isolate the signal of interest
+
+TECH 165 covers digital modulation techniques as methods for encoding information onto a carrier signal. While we did not specifically cover PPM, it is a specific type of demodulation required to decrypt transponders signals.  ADS-B uses Pulse Position Modulation (PPM), where binary information is represented by the timing of pulses rather than their amplitude or phase.
+
+In this project, each bit period is divided into time windows, and the relative position of the pulse determines whether the bit is a 1 or a 0. This directly applies modulation concepts from class to a real aviation communication standard.
 
 **Skills Demonstrated**
 * Linux system configuration
