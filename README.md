@@ -20,7 +20,7 @@ It demonstrates RF engineering fundamentals, Linux systems work, SDR signal proc
 
 **Project Overview**
 Uses a RAS PI 4 and RTL-SDR Blog V4, the system will:
-1) Capture raw IQ samples at 2ms 
+1) Capture raw IQ samples at 2 MS/s
 2) Detects ADS-B preambles
 3) Demodulates PPM bits from Preamble
 4) Decodes DF(Downlink Format), CA(Transponder Capability), ICAO(International Civilization Avitation Organization), Type Code, and the CRC(Cyclic Redundancy Check)
