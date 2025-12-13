@@ -119,10 +119,5 @@ Histogram of ADS-B message categories
 **Hardware (antenna, filter, RTL-SDR, Raspberry Pi)**
 ![IMG_6573](https://github.com/user-attachments/assets/7ee7bcba-5077-4584-9246-9f93aff78161)
 
-
-**How to Run**
-
-**Background / Theory**
-
 **Author**:
 Ranen Carreon 
