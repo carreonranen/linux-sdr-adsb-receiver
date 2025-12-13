@@ -96,7 +96,9 @@ Histogram of ADS-B message categories
 **UNKOWN is work in progress and is most likely altitude**
 
 
-Hardware (antenna, filter, RTL-SDR, Raspberry Pi)
+**Hardware (antenna, filter, RTL-SDR, Raspberry Pi)**
+![IMG_6573](https://github.com/user-attachments/assets/7ee7bcba-5077-4584-9246-9f93aff78161)
+
 
 **How to Run**
 
